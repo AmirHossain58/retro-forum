@@ -7,13 +7,56 @@
     <!--tailwind-css daisy-ui -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/8d18a2b63b.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="container mx-auto">
     <header>
+        <!-- nav bar start -->
+        <div class="navbar mt-3 bg-base-100">
+            <div class="navbar-start">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box">
+                    <li class="border py-2 rounded-[50%]"><a><i title="Home" class="fa-solid fa-house"></i></a></li>
+                    <li  class="border py-2 rounded-[50%]"><a><i title="Tooltip" class="fa-solid fa-pen"></i></a></li>
+                    <li  class="border py-2 rounded-[50%]"><a><i class="fa-solid fa-user-plus"></i></a></li>
+                    <li  class="border py-2 rounded-[50%]"><a><i class="fa-solid fa-flag"></i></a></li>
+                </ul>
+              </div>
+              <a class="btn btn-ghost text-xl">ReTro</a>
+            </div>
+            
+            <div class="navbar-end space-x-2">
+                <div class="hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1  space-x-2">
+                        <li class="border py-2 rounded-[50%]"><a><i title="Home" class="fa-solid fa-house"></i></a></li>
+                        <li  class="border py-2 rounded-[50%]"><a><i title="Tooltip" class="fa-solid fa-pen"></i></a></li>
+                        <li  class="border py-2 rounded-[50%]"><a><i class="fa-solid fa-user-plus"></i></a></li>
+                        <li  class="border py-2 rounded-[50%]"><a><i class="fa-solid fa-flag"></i></a></li>
+                      </ul>
+                </div>
+              <a class="btn text-white rounded-3xl px-10 bg-[#797DFC]">Sign In</a>
+            </div>
+          </div>
+        <!-- nav bar end -->
+        <!-- banner section start -->
+        <!-- banner section start -->
 
 
     </header>
-    
-    
+
+    <main>
+
+    </main>
+
+    <footer>
+
+
+    </footer>
+
+
+    <script src="/reTro.js"></script>
 </body>
 </html>
