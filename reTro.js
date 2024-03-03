@@ -43,14 +43,15 @@ const allPosts2= async(categoryName)  => {
 // loading(true)
 const postsCard=(posts)=>{
     loading(true)
-
+console.log(posts)
     posts.forEach(post => {
       const  div=document.createElement('div')
+      
       div.innerHTML=`
       <div class="bg-[#797DFC1A] flex flex-col lg:flex-row p-3  lg:p-10 gap-6 rounded-3xl border-2 border-[#797DFC]">
-      <div class="w-[72px] h-[72px] rounded-xl bg-white relative">
+      <div   class="w-[72px] h-[72px] rounded-xl bg-white relative">
       <img src="${post.image}" alt="">
-          <div id="active" class="absolute -top-[7%] -right-[4%] text-[#10B981]"><i class="fa-solid fa-circle"></i></div>
+          <div id="icons" class="absolute -top-[7%] -right-[4%] "><i class="fa-solid fa-circle ${post.isActive?"text-green-500" : "text-red-500"}" ></i></div>
       </div>
       <div class="space-y-4"> 
           <div class="flex gap-5 inter font-medium text-[#12132DCC]"><p># ${post.category}</p><p>Author : ${post.author.name}</p></div>
@@ -69,12 +70,25 @@ const postsCard=(posts)=>{
       </div>
       </div>
   </div>
+  
 
       `
+      
+     
       cardContainer.appendChild(div)
     });
     setTimeout(function(){ loading(false) }, 2000);
  
+}
+const icons=(isActive)=>{
+  const icons=document.getElementById('icons')
+  console.log(icons);
+  if(isActive){
+    icons.classList.add('text-[#10B981]')
+  }else{
+    // icons.classList.remove('')
+    icons.classList.add('text-[#FF3434]')
+  }
 }
 // const time1=   setTimeout(loading(false),3000)
 
