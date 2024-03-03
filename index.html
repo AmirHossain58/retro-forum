@@ -71,8 +71,8 @@
                 <h1 class="text-5xl font-black text-white"><span class="text-[#797DFC]">ReTro</span> Forum</h1>
                 <p class="text-[#FFFFFFCC] lg:max-w-[360px]">Share your favorite opinion and win and wp forum coffee mug!</p>
                 <div class="flex bg-white px-3 py-2 rounded-[50px]">
-                    <input type="text" placeholder="Search here anything" class="input w-full max-w-xs" />
-                    <button class="px-6 font-bold text-white rounded-3xl bg-[#797DFC]">Search</button>
+                    <input id="searchHere" type="text" placeholder="Search here anything" class="input w-full max-w-xs" />
+                    <button onclick="searchHereBtn()" class="px-6 font-bold text-white rounded-3xl bg-[#797DFC]">Search</button>
                 </div>
             </div>
             <div class="bg-white p-12 rounded-[32px] text-2xl font-medium text-[#12132DCC] space-y-6 min-w-[370px]"> 
@@ -93,6 +93,12 @@
         <section class="my-12">
             <h1 class="text-5xl font-black text-center">Let’s Discuss</h1><br>
             <p class="text-lg text-[#12132D99] mx-auto text-center lg:max-w-[690px]">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p><br>
+            <div id="loading" class="my-14 text-center hidden">
+             <span class="loading loading-bars loading-xs"></span>
+            <span class="loading loading-bars loading-sm"></span>
+            <span class="loading loading-bars loading-md"></span>
+            <span class="loading loading-bars loading-lg"></span>
+            </div>
 
             <div>
                 <div >

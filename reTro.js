@@ -1,18 +1,48 @@
-const cardContainer =document.getElementById('card-container');
+let cardContainer =document.getElementById('card-container');
+const loading=(isLoading)=>{
+    const loadingS= document.getElementById('loading')
+    // console.log(loadingS.classList);
+    if(isLoading===true){
+        console.log(loadingS.classList);
+        loadingS.classList.remove('hidden')
+    }else{
+        console.log(loadingS.classList);
+        loadingS.classList.add('hidden')
+    }
+    }
 
 
 const allPosts= async()  => {
     const res= await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
     const data =await res.json();
     const posts=data.posts;
-    console.log(posts[0]);
+    // console.log(posts[0]);
     // console.log(res);
     postsCard(posts)
+    
+}
+const searchHereBtn=()=>{
+    loading(true)
+    const searchText= document.getElementById('searchHere').value
+    allPosts2(searchText)
+}
+
+const allPosts2= async(categoryName)  => {
+    cardContainer.innerText=''
+    // console.log(categoryName);
+    const res= await fetch(` https://openapi.programming-hero.com/api/retro-forum/posts?category=${categoryName}`);
+    const data =await res.json();
+    const posts=data.posts;
+    console.log(posts);
+    // console.log(res);
+    postsCard(posts)
+    // loading(true)
 }
 
 
-
+// loading(true)
 const postsCard=(posts)=>{
+    loading(true)
 
     posts.forEach(post => {
       const  div=document.createElement('div')
@@ -43,8 +73,11 @@ const postsCard=(posts)=>{
       `
       cardContainer.appendChild(div)
     });
-
+    setTimeout(function(){ loading(false) }, 2000);
+ 
 }
+// const time1=   setTimeout(loading(false),3000)
+
 const readTitelContainer=document.getElementById('read-titel-container')
 let readPost=0;
 const markAsRead=(title,view)=>{
@@ -65,27 +98,27 @@ const latestPosts= async()  => {
     const res= await fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`);
     const data =await res.json();
    
-    console.log(data);
+    // console.log(data);
     // console.log(res);
     latestPostsCard(data)
 }
 const latestPostsCard=(posts)=>{
-    console.log(posts);
+    // console.log(posts);
     posts.forEach(post => {
         const  div=document.createElement('div')
         div.innerHTML=`
   <div class="card w-96 bg-base-100 border shadow-xl">
-    <div class=" px-16 py-5"><figure><img class="rounded-2xl" src="${post.cover_image}" alt="Shoes" /></figure></div>
+    <div class=" px-10 py-5"><figure><img class="rounded-2xl" src="${post.cover_image}" alt="Shoes" /></figure></div>
     <div class="card-body">
-        <p class="text-[#12132D99]"><i class="fa-solid fa-calendar-days"></i><span>${post.author.posted_date}</span> </p>
+        <p class="text-[#12132D99]"><i class="fa-solid fa-calendar-days"></i><span>${post.author?.posted_date||' No Publish Date'}</span> </p>
         <h2 class="card-title font-bold">${post.title}</h2>
         <p class="text-[#12132D99]">${post.description} </p>
         <div class=" flex gap-4">
-        <div class ="w-[44px] h-[44px] rounded-[50%]"><img class="rounded-[50%]" src="${post.profile_image}" alt=""></div>
+        <div class ="w-[44px] h-[44px] rounded-[50%]"><img class="rounded-[50%]" src="${post?.profile_image}" alt=""></div>
         
         <div>
-            <h3 class="font-bold">${post.author.name}</h3>
-            <p class="text-[#12132D99]">${post.author?.designation}</p>
+            <h3 class="font-bold">${post?.author.name}</h3>
+            <p class="text-[#12132D99]">${post.author?.designation  || ' Unknown'}</p>
         </div>
         </div>
     </div>
@@ -94,6 +127,7 @@ const latestPostsCard=(posts)=>{
         latestCardContainer.appendChild(div)
 })
 }
+
 
 
 
