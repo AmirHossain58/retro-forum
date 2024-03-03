@@ -40,22 +40,23 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                 </div>
                 <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box">
-                    <li class="border py-2 rounded-[50%]"><a><i title="Home" class="fa-solid fa-house"></i></a></li>
-                    <li  class="border py-2 rounded-[50%]"><a><i title="Tooltip" class="fa-solid fa-pen"></i></a></li>
-                    <li  class="border py-2 rounded-[50%]"><a><i class="fa-solid fa-user-plus"></i></a></li>
-                    <li  class="border py-2 rounded-[50%]"><a><i class="fa-solid fa-flag"></i></a></li>
+                    <li class="border py-2 rounded-[50%] tooltip" data-tip="Home"><a><i   class="fa-solid fa-house "></i></a></li>
+                    <li  class="border py-2 rounded-[50%] tooltip" data-tip="Edit"><a><i  class="fa-solid fa-pen "></i></a></li>
+                    <li  class="border py-2 rounded-[50%] tooltip" data-tip="Add" ><a><i  class="fa-solid fa-user-plus "></i></a></li>
+                    <li  class="border py-2 rounded-[50%] tooltip" data-tip="Pin" ><a><i  class="fa-solid fa-flag "></i></a></li>
                 </ul>
               </div>
-              <a class="btn btn-ghost text-xl">ReTro</a>
+              <a class="btn btn-ghost text-xl"><img src="./images/logo.png" alt=""></a>
             </div>
             
             <div class="navbar-end space-x-2">
                 <div class="hidden lg:flex">
                     <ul class="menu menu-horizontal px-1  space-x-2">
-                        <li class="border py-2 rounded-[50%]"><a><i title="Home" class="fa-solid fa-house"></i></a></li>
-                        <li  class="border py-2 rounded-[50%]"><a><i title="Tooltip" class="fa-solid fa-pen"></i></a></li>
-                        <li  class="border py-2 rounded-[50%]"><a><i class="fa-solid fa-user-plus"></i></a></li>
-                        <li  class="border py-2 rounded-[50%]"><a><i class="fa-solid fa-flag"></i></a></li>
+                        <!-- class="tooltip" data-tip="hello -->
+                        <li class="border py-2 rounded-[50%] tooltip" data-tip="Home"><a><i   class="fa-solid fa-house "></i></a></li>
+                    <li  class="border py-2 rounded-[50%] tooltip" data-tip="Edit"><a><i  class="fa-solid fa-pen "></i></a></li>
+                    <li  class="border py-2 rounded-[50%] tooltip" data-tip="Add" ><a><i  class="fa-solid fa-user-plus "></i></a></li>
+                    <li  class="border py-2 rounded-[50%] tooltip" data-tip="Pin" ><a><i  class="fa-solid fa-flag "></i></a></li>
                       </ul>
                 </div>
               <a class="btn text-white rounded-3xl px-10 bg-[#797DFC]">Sign In</a>
@@ -64,7 +65,7 @@
         <!-- nav bar end -->
         <!-- banner section start -->
         <section id="banner" class="bg-[#12132D] rounded-[32px] lg:min-h-[550px]">
-            <div class="flex lg:min-h-[550px] lg:gap-10 justify-center items-center">
+            <div class="flex flex-col lg:flex-row lg:min-h-[550px] gap-5 p-4 lg:gap-10 justify-center items-center">
             <div class="space-y-5">
                 <h1 class="text-5xl font-black text-white">Welcome to the </h1>
                 <h1 class="text-5xl font-black text-white"><span class="text-[#797DFC]">ReTro</span> Forum</h1>
@@ -82,7 +83,7 @@
             </div>
         </div>
         </section>
-        <!-- banner section start -->
+        <!-- banner section end-->
 
 
     </header>
@@ -95,9 +96,9 @@
 
             <div>
                 <div id="card-container">
-                    <div class=" flex gap-6">
-                        <div class="w-2/3 space-y-5">
-                        <div class="bg-[#797DFC1A] flex  p-10 gap-6 rounded-3xl border-2 border-[#797DFC]">
+                    <div class=" flex flex-col lg:flex-row gap-6">
+                        <div class="lg:w-2/3 space-y-5">
+                        <div class="bg-[#797DFC1A] flex flex-col lg:flex-row p-3  lg:p-10 gap-6 rounded-3xl border-2 border-[#797DFC]">
                             <div class="w-[72px] h-[72px] rounded-xl bg-white relative">
                                 <div class="absolute -top-[5%] right-0 text-[#10B981]"><i class="fa-solid fa-circle"></i></div>
                             </div>
@@ -116,6 +117,10 @@
                             </div>
                             </div>
                         </div>
+
+
+
+                        <!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
                         <div class="bg-[#797DFC1A] flex  p-10 gap-6 rounded-3xl border-2 border-[#797DFC]">
                             <div class="w-[72px] h-[72px] rounded-xl bg-white relative">
                                 <div class="absolute -top-[5%] right-0 text-[#10B981]"><i class="fa-solid fa-circle"></i></div>
@@ -177,10 +182,58 @@
         </section>
         <!--  Let’s Discuss section end-->
 
+        <!-- Join Our Forum section start -->
+        <section class=" flex flex-col lg:flex-row gap-5 justify-between items-center bg-[#12132D] pl-20 pt-14 pr-5 rounded-[32px]">
+            <div class="text-white space-y-4">
+                <h1 class="text-5xl">Join Our Forum</h1>
+                <p>Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
+                <button class=" btn bg-[#797DFC] text-white rounded-3xl px-10 py-4">Registered Now</button>
+            </div>
+            <div><img src="./images/joinforum.png" alt=""></div>
+        </section>
+        <!-- Join Our Forum section start -->
+        <!--Latest Posts section start   -->
+        <section  class="my-14">
+            <h1 class="text-5xl font-black text-center">Latest Posts</h1><br>
+            <p class="text-lg text-[#12132D99] mx-auto text-center lg:max-w-[690px]">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p><br>
+
+            <div>
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+                    <div class="card-body">
+                        <p class="text-[#12132D99]"><i class="fa-solid fa-calendar-days"></i><span>29 January 2024</span> </p>
+                      <h2 class="card-title font-bold">What will a mars habitat force that impact in our daily life!!!</h2>
+                      <p class="text-[#12132D99]">Yes, you can run unit tests and view the results directly within the app. </p>
+                      <div class=" flex gap-4">
+                        <img src="" alt="">
+                        <div>
+                            <h3 class="font-bold">Cameron Williamson</h3>
+                            <p class="text-[#12132D99]">Unknown</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+        <!--Latest Posts section end  -->
+
     </main>
 
     <footer>
+   <div class="bg-[#F3F3F5] flex flex-col justify-center items-center space-y-6  py-24">
+    <img src="./images/logo.png" alt="">
+    <p class="max-w-[600px] text-center">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
+    <div class="flex gap-3">
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-github"></i>
+    </div>
+    <div class="w-full border-b-2 border-[#30325E1A]"></div>
+   
+    <p>2017, All Rights Reserved.</p>
 
+   </div>
 
     </footer>
 
