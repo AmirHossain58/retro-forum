@@ -37,7 +37,7 @@ const postsCard=(posts)=>{
       const  div=document.createElement('div');
       
       div.innerHTML=`
-      <div class="bg-[#797DFC1A] flex flex-col lg:flex-row p-3  lg:p-10 gap-6 rounded-3xl border-2 border-[#797DFC]">
+      <div class="bg-[#797DFC1A] w-full flex flex-col lg:flex-row p-3  lg:p-10 gap-6 rounded-3xl border-2 border-[#797DFC]">
       <div   class="w-[72px] h-[72px] rounded-xl bg-white relative">
       <img class="rounded-3xl" src="${post.image}" alt="">
           <div id="icons" class="absolute -top-[5%] -right-[2%] "><i class="fa-solid fa-circle ${post.isActive?"text-green-500" : "text-red-500"}" ></i></div>
@@ -45,7 +45,7 @@ const postsCard=(posts)=>{
       <div class="space-y-4"> 
           <div class="flex gap-5 inter font-medium text-[#12132DCC]"><p># ${post.category}</p><p>Author : ${post.author.name}</p></div>
           <p class="text-lg font-bold ">${post.title}</p>
-          <p class="text-[#12132D99] lg:max-w-[570px] ">${post.description}</p>
+          <p class="text-[#12132D99] lg:max-w-[400px] ">${post.description}</p>
           <hr>
           <div class="flex justify-between items-center">
           <div class="flex gap-6 inter text-[#12132D99]">
@@ -90,7 +90,7 @@ div.innerHTML=`
         <p class="text-[#12132D] font-bold ">${title}</p>
         <p class="flex items-center gap-2"><i class="fa-regular fa-eye"> </i> ${view}</p>
     </div>
-`;
+             `;
 readTitelContainer.appendChild(div);
 const read=document.getElementById('read-post').innerText=readPost+=1;
 }
