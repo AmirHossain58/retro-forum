@@ -1,13 +1,10 @@
 let cardContainer =document.getElementById('card-container');
 const loading=(isLoading)=>{
-    const loadingS= document.getElementById('loading')
-    // console.log(loadingS.classList);
+    const loadingS= document.getElementById('loading');
     if(isLoading===true){
-        // console.log(loadingS.classList);
-        loadingS.classList.remove('hidden')
+        loadingS.classList.remove('hidden');
     }else{
-        // console.log(loadingS.classList);
-        loadingS.classList.add('hidden')
+        loadingS.classList.add('hidden');
     }
     }
 
@@ -16,36 +13,28 @@ const allPosts= async()  => {
     const res= await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
     const data =await res.json();
     const posts=data.posts;
-    // console.log(posts[0]);
-    // console.log(res);
-    postsCard(posts)
+    postsCard(posts);
     
 }
 const searchHereBtn=()=>{
-    loading(true)
-    const searchText= document.getElementById('searchHere').value
-    allPosts2(searchText)
+    loading(true);
+    const searchText= document.getElementById('searchHere').value;
+    allPosts2(searchText);
 }
 
 const allPosts2= async(categoryName)  => {
-    cardContainer.innerText=''
-    // console.log(categoryName);
+    cardContainer.innerText='';
     const res= await fetch(` https://openapi.programming-hero.com/api/retro-forum/posts?category=${categoryName}`);
     const data =await res.json();
     const posts=data.posts;
-    // console.log(posts);
-    // console.log(res);
-    postsCard(posts)
-    // loading(true)
+    postsCard(posts);
 }
 
 
-// loading(true)
 const postsCard=(posts)=>{
-    loading(true)
-// console.log(posts)
+    loading(true);
     posts.forEach(post => {
-      const  div=document.createElement('div')
+      const  div=document.createElement('div');
       
       div.innerHTML=`
       <div class="bg-[#797DFC1A] flex flex-col lg:flex-row p-3  lg:p-10 gap-6 rounded-3xl border-2 border-[#797DFC]">
@@ -72,56 +61,50 @@ const postsCard=(posts)=>{
   </div>
   
 
-      `
+      `;
       
      
-      cardContainer.appendChild(div)
+      cardContainer.appendChild(div);
     });
     setTimeout(function(){ loading(false) }, 2000);
  
 }
 const icons=(isActive)=>{
-  const icons=document.getElementById('icons')
+  const icons=document.getElementById('icons');
   console.log(icons);
   if(isActive){
-    icons.classList.add('text-[#10B981]')
+    icons.classList.add('text-[#10B981]');
   }else{
-    // icons.classList.remove('')
-    icons.classList.add('text-[#FF3434]')
+    icons.classList.add('text-[#FF3434]');
   }
 }
-// const time1=   setTimeout(loading(false),3000)
 
-const readTitelContainer=document.getElementById('read-titel-container')
+const readTitelContainer=document.getElementById('read-titel-container');
 let readPost=0;
 const markAsRead=(title,view)=>{
 
-const div =document.createElement('div')
+const div =document.createElement('div');
 
 div.innerHTML=`
     <div class="flex justify-between p-4 bg-white rounded-3xl">
         <p class="text-[#12132D] font-bold ">${title}</p>
         <p class="flex items-center gap-2"><i class="fa-regular fa-eye"> </i> ${view}</p>
     </div>
-`
-readTitelContainer.appendChild(div)
-const read=document.getElementById('read-post').innerText=readPost+=1
+`;
+readTitelContainer.appendChild(div);
+const read=document.getElementById('read-post').innerText=readPost+=1;
 }
 const latestCardContainer=document.getElementById('latestCardContainer')
 const latestPosts= async()  => {
     const res= await fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`);
     const data =await res.json();
-   
-    // console.log(data);
-    // console.log(res);
-    latestPostsCard(data)
+    latestPostsCard(data);
 }
 const latestPostsCard=(posts)=>{
-    // console.log(posts);
     posts.forEach(post => {
-        const  div=document.createElement('div')
+        const  div=document.createElement('div');
         div.innerHTML=`
-  <div class="card w-96 bg-base-100 border shadow-xl">
+  <div class="card lg:w-96 bg-base-100 border shadow-xl">
     <div class=" px-10 py-5"><figure><img class="rounded-2xl" src="${post.cover_image}" alt="Shoes" /></figure></div>
     <div class="card-body">
         <p class="text-[#12132D99]"><i class="fa-solid fa-calendar-days"></i><span>${post.author?.posted_date||' No Publish Date'}</span> </p>
@@ -137,45 +120,11 @@ const latestPostsCard=(posts)=>{
         </div>
     </div>
     </div>
-        `
-        latestCardContainer.appendChild(div)
+        `;
+        latestCardContainer.appendChild(div);
 })
 }
 
 
-
-
-
-// read.innerText=readPost+1
-// console.log(readPost);
-
 latestPosts()
 allPosts()
-
-
-// 0
-// : 
-// author
-// : 
-// {name: 'John Doe', designation: 'ROR Developer', posted_date: '29 January 2024'}
-// cover_image
-// : 
-// "https://i.ibb.co/VYGSkLz/pexels-jeshootscom-442576.jpg"
-// description
-// : 
-// "Leading gaming expert with a wealth of knowledge and passion for all things gaming"
-// profile_image
-// : 
-// "https://i.ibb.co/z8zx95w/pexels-davide-de-giovanni-1649675.jpg"
-// title
-// : 
-// "Gaming Enthusiast Expert in Play"
-// [[Prototype]]
-// : 
-// Object
-// 1
-// : 
-// {cover_image: 'https://i.ibb.co/hC2CtK2/pexels-monstera-production-7412067.jpg', profile_image: 'https://i.ibb.co/0QRxkd5/pexels-jan-kop-iva-3525908.jpg', title: 'Discoverer of Global Treasures', description: ' Passionate travel enthusiast sharing captivating …d insider tips to inspire unforgettable journeys.', author: {…}}
-// 2
-// : 
-// {cover_image: 'https://i.ibb.co/MRFZT7G/pexels-pixabay-356056.jpg', profile_image: 'https://i.ibb.co/wYxp7d6/pexels-spencer-selover-428328.jpg', title: 'Innovative Fashion Design Luminary', description: 'Innovative fashion designer with a keen eye for detail and a passion for pushing boundaries.', author: {…}}
