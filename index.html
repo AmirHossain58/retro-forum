@@ -33,7 +33,7 @@
 <body class="container mx-auto mulish-font">
     <header>
         <!-- nav bar start -->
-        <div class="navbar mt-3 bg-base-100">
+        <div class="navbar my-8 bg-base-100">
             <div class="navbar-start">
               <div class="dropdown">
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -51,12 +51,12 @@
             
             <div class="navbar-end space-x-2">
                 <div class="hidden lg:flex">
-                    <ul class="menu menu-horizontal px-1  space-x-2">
+                    <ul class="menu menu-horizontal px-1   space-x-2">
                         <!-- class="tooltip" data-tip="hello -->
-                        <li class="border py-2 rounded-[50%] tooltip" data-tip="Home"><a><i   class="fa-solid fa-house "></i></a></li>
-                    <li  class="border py-2 rounded-[50%] tooltip" data-tip="Edit"><a><i  class="fa-solid fa-pen "></i></a></li>
-                    <li  class="border py-2 rounded-[50%] tooltip" data-tip="Add" ><a><i  class="fa-solid fa-user-plus "></i></a></li>
-                    <li  class="border py-2 rounded-[50%] tooltip" data-tip="Pin" ><a><i  class="fa-solid fa-flag "></i></a></li>
+                    <li class="border bg-[#12132D08]  px-3 py-4 rounded-[50%] tooltip" data-tip="Home"><a><i   class="fa-solid fa-house "></i></a></li>
+                    <li  class="border bg-[#12132D08] px-3 py-4 rounded-[50%] tooltip" data-tip="Edit"><a><i  class="fa-solid fa-pen "></i></a></li>
+                    <li  class="border bg-[#12132D08] px-3 py-4 rounded-[50%] tooltip" data-tip="Add" ><a><i  class="fa-solid fa-user-plus "></i></a></li>
+                    <li  class="border bg-[#12132D08] px-3 py-4 rounded-[50%] tooltip" data-tip="Pin" ><a><i  class="fa-solid fa-flag "></i></a></li>
                       </ul>
                 </div>
               <a class="btn text-white rounded-3xl px-10 bg-[#797DFC]">Sign In</a>
@@ -171,7 +171,7 @@
                      -->
                      <div>                        
                         <div id="read-titel-container"  class="bg-[#12132D0D] rounded-3xl p-6 space-y-4">
-                            <div class="flex justify-between gap-20">
+                            <div class="flex justify-between lg:min-w-[400px] gap-20">
                                 <p class="text-xl font-bold">Title</p> 
                                 <p><span><i class="fa-solid text-[#3DCE09] fa-check-double"></i></span> <span class="text-[#12132D99]">Mark as read (<span id="read-post">0</span>)</span></p></div>
                             <!-- <div class="flex justify-between p-4 bg-white rounded-3xl">
@@ -208,10 +208,10 @@
         <!-- Join Our Forum section start -->
         <!--Latest Posts section start   -->
         <section  class="my-14">
-            <h1 class="text-5xl font-black text-center">Latest Posts</h1><br>
+            <h1 class="text-5xl font-black text-center ">Latest Posts</h1><br>
             <p class="text-lg text-[#12132D99] mx-auto text-center lg:max-w-[690px]">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p><br>
 
-            <div id="latestCardContainer" class="flex gap-4">
+            <div id="latestCardContainer" class="flex flex-col lg:flex-row gap-5 justify-center">
                 <!-- <div class="card w-96 bg-base-100 shadow-xl">
                     <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                     <div class="card-body">

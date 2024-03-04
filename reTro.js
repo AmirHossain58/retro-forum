@@ -3,10 +3,10 @@ const loading=(isLoading)=>{
     const loadingS= document.getElementById('loading')
     // console.log(loadingS.classList);
     if(isLoading===true){
-        console.log(loadingS.classList);
+        // console.log(loadingS.classList);
         loadingS.classList.remove('hidden')
     }else{
-        console.log(loadingS.classList);
+        // console.log(loadingS.classList);
         loadingS.classList.add('hidden')
     }
     }
@@ -33,7 +33,7 @@ const allPosts2= async(categoryName)  => {
     const res= await fetch(` https://openapi.programming-hero.com/api/retro-forum/posts?category=${categoryName}`);
     const data =await res.json();
     const posts=data.posts;
-    console.log(posts);
+    // console.log(posts);
     // console.log(res);
     postsCard(posts)
     // loading(true)
@@ -43,15 +43,15 @@ const allPosts2= async(categoryName)  => {
 // loading(true)
 const postsCard=(posts)=>{
     loading(true)
-console.log(posts)
+// console.log(posts)
     posts.forEach(post => {
       const  div=document.createElement('div')
       
       div.innerHTML=`
       <div class="bg-[#797DFC1A] flex flex-col lg:flex-row p-3  lg:p-10 gap-6 rounded-3xl border-2 border-[#797DFC]">
       <div   class="w-[72px] h-[72px] rounded-xl bg-white relative">
-      <img src="${post.image}" alt="">
-          <div id="icons" class="absolute -top-[7%] -right-[4%] "><i class="fa-solid fa-circle ${post.isActive?"text-green-500" : "text-red-500"}" ></i></div>
+      <img class="rounded-3xl" src="${post.image}" alt="">
+          <div id="icons" class="absolute -top-[5%] -right-[2%] "><i class="fa-solid fa-circle ${post.isActive?"text-green-500" : "text-red-500"}" ></i></div>
       </div>
       <div class="space-y-4"> 
           <div class="flex gap-5 inter font-medium text-[#12132DCC]"><p># ${post.category}</p><p>Author : ${post.author.name}</p></div>
@@ -66,7 +66,7 @@ console.log(posts)
               <span><i class="fa-regular fa-clock"></i><span> ${post.
                 posted_time} min</span></span>
           </div>
-          <div onclick="markAsRead('${post.title}','${post.view_count}')" class="bg-[#10B981] rounded-3xl p-1"><i class="fa-solid fa-envelope text-white"></i></div>
+          <div onclick="markAsRead('${post?.title}','${post?.view_count}')" class="bg-[#10B981] rounded-3xl p-1"><i class="fa-solid fa-envelope text-white"></i></div>
       </div>
       </div>
   </div>
@@ -101,7 +101,7 @@ const div =document.createElement('div')
 div.innerHTML=`
     <div class="flex justify-between p-4 bg-white rounded-3xl">
         <p class="text-[#12132D] font-bold ">${title}</p>
-        <p class="flex items-center"><i class="fa-regular fa-eye"></i>${view} </p>
+        <p class="flex items-center gap-2"><i class="fa-regular fa-eye"> </i> ${view}</p>
     </div>
 `
 readTitelContainer.appendChild(div)
